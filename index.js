@@ -5,22 +5,19 @@ const cTable = require("console.table");
 
 var connection = mysql.createConnection({
   host: "localhost",
-
-  // Your port; if not 3306
   port: 3306,
-
-  // Your username
   user: "root",
-
-  // Your password
   password: "password",
   database: "employees_db"
 });
- // beginning of terminal app start
+
+
+
+ // start terminal questions
 inquirer
   .prompt({
     type: "list",
-    message: "What do you want to do?",
+    message: "Select an action:",
     name: "option",
     choices: ["add", "view", "remove"]
   })
@@ -30,7 +27,7 @@ inquirer
       inquirer
         .prompt({
           type: "list",
-          message: "What do you want to add?",
+          message: "Add what?",
           name: "option",
           choices: ["department", "role", "employee"]
         })
@@ -42,7 +39,7 @@ inquirer
               inquirer
                 .prompt({
                   type: "input",
-                  message: "What is the name of the department you want to add?",
+                  message: "Name of the department?",
                   name: "option"
                 })
                 .then(function(answer) {
@@ -50,7 +47,7 @@ inquirer
                   connection.connect();
     
                   connection.query(
-                    "INSERT INTO department SET ?",
+                    "Add to department set?",
                     { name: answer.option },
                     function(error, results, fields) {
                       if (error) throw error;
@@ -65,15 +62,15 @@ inquirer
             inquirer
               .prompt([{
                 type: "input",
-                message: "What is the title of the role you want to add?",
+                message: "What role would you like to add?",
                 name: "option"
               },{
                   type: "input",
-                  message: "What is the salary for this position?",
+                  message: "Salary for this position?",
                   name: "amount"
               },{
                 type: "input",
-                message: "What department does this role work in?",
+                message: "What department does this role belong to?",
                 name: "departmentId"
               }])
               .then(function(answer) {
@@ -81,7 +78,7 @@ inquirer
                 connection.connect();
 
                 connection.query(
-                  "INSERT INTO role SET ?",
+                  "Add to role set?",
                   { title: answer.option, salary: answer.amount, department_id: answer.departmentId },
                   function(error, results, fields) {
                     if (error) throw error;
@@ -98,22 +95,22 @@ inquirer
               .prompt([
                   {
                 type: "input",
-                message: "What is the first name of the employee you want to add?",
+                message: "What is the employee's first name?",
                 name: "first"
               },
                   {
                 type: "input",
-                message: "What is the last name of the employee you want to add?",
+                message: "What is the employee's last name?",
                 name: "last"
               },
                   {
                 type: "input",
-                message: "What role does this employee have?",
+                message: "What is this employee's role?",
                 name: "role"
               },
                   {
                 type: "input",
-                message: "Who is the manager of this employee?",
+                message: "Who is this employee's manager?",
                 name: "boss"
               }
             ])
@@ -122,7 +119,7 @@ inquirer
                 connection.connect();
 
                 connection.query(
-                  "INSERT INTO employee SET ?",
+                  "Add to employee set?",
                   { first: answer.first, last: answer.last, role: answer.role, boss: answer.boss },
                   function(error, results, fields) {
                     if (error) throw error;
@@ -137,7 +134,7 @@ inquirer
       inquirer
         .prompt({
           type: "list",
-          message: "What do you want to VIEW?",
+          message: "What would you like to view?",
           name: "option",
           choices: ["department", "role", "employee"]
         })
@@ -183,7 +180,7 @@ inquirer
       inquirer
         .prompt({
           type: "list",
-          message: "Where do you want to remove from?",
+          message: "What category do you want to remove from?",
           name: "option",
           choices: ["department", "role", "employee"]
         })
@@ -194,7 +191,7 @@ inquirer
             inquirer
               .prompt({
                 type: "input",
-                message: "What is the name of the department you want to remove?",
+                message: "Department you'd like to remove?",
                 name: "option"
               })
               .then(function(answer) {
@@ -217,7 +214,7 @@ inquirer
               .prompt({
                 type: "input",
                 message:
-                  "What is the title of the role you want to remove?",
+                  "Which role would you like to remove?",
                 name: "option"
               })
               .then(function(answer) {
@@ -239,7 +236,7 @@ inquirer
             inquirer
               .prompt({
                 type: "input",
-                message:"What is the id name of the employee you want to remove?",
+                message:"What is the id of the employee you'd like to remove?",
                 name: "option"
               })
               .then(function(answer) {
