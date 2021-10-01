@@ -47,7 +47,7 @@ inquirer
                   connection.connect();
     
                   connection.query(
-                    "Add to department set?",
+                    "INSERT INTO department SET ?",
                     { name: answer.option },
                     function(error, results, fields) {
                       if (error) throw error;
@@ -78,7 +78,7 @@ inquirer
                 connection.connect();
 
                 connection.query(
-                  "Add to role set?",
+                  "INSERT INTO role SET ?",
                   { title: answer.option, salary: answer.amount, department_id: answer.departmentId },
                   function(error, results, fields) {
                     if (error) throw error;
@@ -96,22 +96,22 @@ inquirer
                   {
                 type: "input",
                 message: "What is the employee's first name?",
-                name: "first"
+                name: 'first'
               },
                   {
                 type: "input",
                 message: "What is the employee's last name?",
-                name: "last"
+                name: 'last'
               },
                   {
                 type: "input",
                 message: "What is this employee's role?",
-                name: "role"
+                name: 'role'
               },
                   {
                 type: "input",
                 message: "Who is this employee's manager?",
-                name: "boss"
+                name: 'boss'
               }
             ])
               .then(function(answer) {
@@ -119,8 +119,8 @@ inquirer
                 connection.connect();
 
                 connection.query(
-                  "Add to employee set?",
-                  { first: answer.first, last: answer.last, role: answer.role, boss: answer.boss },
+                  "INSERT INTO employee SET ?",
+                  { first_name: answer.first, last_name: answer.last, role_id: answer.role, manager_id: answer.boss },
                   function(error, results, fields) {
                     if (error) throw error;
                     console.log(results);
