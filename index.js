@@ -1,6 +1,6 @@
 
 const inquirer = require("inquirer");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const cTable = require("console.table");
 
 var connection = mysql.createConnection({
@@ -34,7 +34,7 @@ inquirer
         .then(function(answer) {
             console.log(answer);
 
-            // Adding department option
+            // Adding department
              if (answer.option === "department") {
               inquirer
                 .prompt({
@@ -57,7 +57,7 @@ inquirer
                 });
             }
 
-          // adding role option
+          // adding role
           else if (answer.option === "role") {
             inquirer
               .prompt([{
@@ -89,7 +89,7 @@ inquirer
    
           }
           
-          // Adding employee option
+          // Adding employee
           else if (answer.option === "employee") {
             inquirer
               .prompt([

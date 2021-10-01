@@ -29,7 +29,7 @@ The Employee Tracker is a command-line application to manage a company's employe
 ## Installation
 
 
-Clone the repo to your own computer, run "npm i" in the root directory using the terminal. 
+Clone the repo to your own computer, then run "npm i" in the root directory using the terminal to install dependencies.
 
 
 ## Usage
