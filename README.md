@@ -34,7 +34,7 @@ Clone the repo to your own computer, then run "npm i" in the root directory usin
 
 ## Usage
 
-Once all dependencies have been installed, run "mysql -u root -p" and enter password at prompt. Run "SOURCE sql/schema.sql" to start database, then run "USE employees_db" to select the database. Optional: run "SOURCE sql/seed.sql" to seed the database. Enter "quit" into the terminal, then "node index.js" to begin the series of prompts that allow you to enter information into the database tables.
+Once all dependencies have been installed, run "mysql -u root -p" and enter password at prompt. Run "SOURCE sql/schema.sql" to start database, then run "USE employees_db" to select the database. Optional: run "SOURCE sql/seed.sql" to seed the database. Enter "quit" into the terminal, then "node index.js" to begin the series of prompts that allow you to enter information into the database tables. Demo video which shows most of the app's functionality: https://youtu.be/0BeJnL9eANw
 
 ## License
 
