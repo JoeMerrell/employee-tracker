@@ -8,6 +8,8 @@ INSERT INTO department (name)
 VALUES ("Bakery");
 INSERT INTO department (name)
 VALUES ("Personal Care");
+INSERT INTO department (name)
+VALUES ("Computers");
 
 INSERT INTO role (title, salary, department_id)
 VALUES ("Paint Master", 50000, 2);
@@ -19,10 +21,17 @@ INSERT INTO role (title, salary, department_id)
 VALUES ("Hair Stylist", 75000, 5);
 INSERT INTO role (title, salary, department_id)
 VALUES ("Manicurist", 65000, 6);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Developer", 90000, 7);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Mary", "Smith", 1, 3);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Susie", "Jones", 2, 5);
+VALUES ("Susie", "Jones", 2, 4);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Robert", "Merrick", 4, 1);
+VALUES ("Robert", "Merrick", 4, 2);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Dipsy", "Tubby", 7, 5);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("LaLa", "Tubby", 7, 5);
+
