@@ -9,7 +9,7 @@
 
 ## Description
 
-The Employee Tracker is a command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL. 
+The Employee Tracker is a command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL. The GitHub repo for the application can be found here: https://github.com/JoeMerrell/employee-tracker/tree/main
 
 
 ## Contents 
@@ -34,7 +34,7 @@ Clone the repo to your own computer, then run "npm i" in the root directory usin
 
 ## Usage
 
-Once all dependencies have been installed, run "node index.js" in the terminal in the root directory and follow the prompts.
+Once all dependencies have been installed, run "mysql -u root -p" and enter password at prompt. Run "SOURCE sql/schema.sql" to start database, then run "USE employees_db" to select the database. Optional: run "SOURCE sql/seed.sql" to seed the database. Enter "quit" into the terminal, then "node index.js" to begin the series of prompts that allow you to enter information into the database tables.
 
 ## License
 
@@ -50,5 +50,5 @@ N/A
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact Joe Merrell (me) directly at joe@uhhuhohyeah.com. You can find more of my work at my github account: https://github.com/JoeMerrell
+If you have any questions about the repo, contact Joe Merrell (me) directly at joe@uhhuhohyeah.com. You can find more of my work at my github account: https://github.com/JoeMerrell
 
